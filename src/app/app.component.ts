@@ -23,6 +23,7 @@ export class AppComponent {
   clickDel() {
     this.operation = ['0', '0'];
     this.number = '';
+    this.resultat = null;
   }
 
   clickNumber(nb: string) {
@@ -31,5 +32,6 @@ export class AppComponent {
 
   additionner() {
     this.resultat = +this.operation[0] + +this.operation[1];
+    this.operation[0] = this.resultat + '';
   }
 }
