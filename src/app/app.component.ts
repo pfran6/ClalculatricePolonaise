@@ -10,6 +10,7 @@ export class AppComponent {
   operation: string[] = ['0', '0'];
   number = '';
   resultat: number;
+  info: string;
 
   clickCalculatrice() {
     if (this.operation[0] === '0') {
@@ -24,6 +25,7 @@ export class AppComponent {
     this.operation = ['0', '0'];
     this.number = '';
     this.resultat = null;
+    this.info = null;
   }
 
   clickNumber(nb: string) {
@@ -33,5 +35,24 @@ export class AppComponent {
   additionner() {
     this.resultat = +this.operation[0] + +this.operation[1];
     this.operation[0] = this.resultat + '';
+  }
+
+  soustraire() {
+    this.resultat = +this.operation[0] - +this.operation[1];
+    this.operation[0] = this.resultat + '';
+  }
+
+  multiplier() {
+    this.resultat = +this.operation[0] * +this.operation[1];
+    this.operation[0] = this.resultat + '';
+  }
+
+  diviser() {
+    if (+this.operation[1] !== 0) {
+      this.resultat = +this.operation[0] / +this.operation[1];
+      this.operation[0] = this.resultat + '';
+    } else {
+      this.info = 'Impossible de divier par 0!';
+    }
   }
 }

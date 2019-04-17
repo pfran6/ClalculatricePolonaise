@@ -4,6 +4,12 @@
     <h1>Calculatrice Polonaise</h1>
   </div>
   <div class="ecran">
+    <div class="info" *ngIf="number != null && info == null">
+      {{ number }}
+    </div>
+    <div class="info" *ngIf="info != null">
+      {{ info }}
+    </div>
     {{ resultat }}
   </div>
   <div class="calculatrice">
@@ -31,7 +37,7 @@
       <button (click)="clickNumber('6')">6</button>
     </div>
     <div class="signe">
-      <button>-</button>
+      <button (click)="soustraire()">-</button>
     </div>
   </div>
   <div class="calculatrice">
@@ -45,7 +51,7 @@
       <button (click)="clickNumber('9')">9</button>
     </div>
     <div class="signe">
-      <button>/</button>
+      <button (click)="diviser()">/</button>
     </div>
   </div>
   <div class="calculatrice">
@@ -59,11 +65,7 @@
       <button (click)="clickCalculatrice()">ENTER</button>
     </div>
     <div class="signe">
-      <button>*</button>
+      <button (click)="multiplier()">*</button>
     </div>
   </div>
-  <div *ngFor="let o of operation">
-    {{ o }}
-  </div>
-  Résultat: {{ resultat}}
 </div>
