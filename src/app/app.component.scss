@@ -1,0 +1,26 @@
+.calculatrice {
+  padding: 0 20%;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr 4fr;
+  button {
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    color: white;
+  }
+  .chiffre {
+    button {
+      background-color: red;
+    }
+  }
+  .signe {
+    button {
+      background-color: darkred;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 5% 0 10% 0;
+}
