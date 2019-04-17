@@ -52,7 +52,7 @@ export class AppComponent {
       this.resultat = +this.operation[0] / +this.operation[1];
       this.operation[0] = this.resultat + '';
     } else {
-      this.info = 'Impossible de divier par 0!';
+      this.info = 'Impossible de diviser par 0!';
     }
   }
 }
